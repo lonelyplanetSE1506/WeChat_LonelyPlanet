@@ -54,7 +54,7 @@ Page({
             }
           });
           wx.switchTab({
-            url: '../mainPage/mainPage',//跳转到主页
+            url: '../shudong/shudong',//跳转到树洞页面
           })
           //console.log(result)
         }
@@ -68,10 +68,10 @@ Page({
     })
   },
   //点击登录按钮
-  mainPage: function () {
-    console.log("进入个人主页")
+  shudong: function () {
+    console.log("进入树洞页面")
     wx.switchTab({
-      url: '../mainPage/mainPage',
+      url: '../shudong/shudong',
     })
   },
   //点击注册按钮
