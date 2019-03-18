@@ -1,0 +1,33 @@
+<!--添加心愿-->
+<view style="background-image: url('../../images/background13.jpg')">
+  <form bindsubmit='frmAddwish'>
+    <view>
+      <view class='space'></view>
+      <view>
+        <rich-text style='line-height: 20px;color:red;font-size:20pt;'>标题：</rich-text>
+      </view>
+      <view class='space'></view>
+      <input type='text' name='title' placeholder='title'></input>
+    </view>
+    <view class='line'></view>
+    <view>
+      <view class='space'></view>
+      <view>
+        <rich-text style='line-height: 20px;color:red;font-size:20pt;'>内容：</rich-text>
+      </view>
+      <view class='space'></view>
+      <textarea placeholder='content' name='content' maxlength='240'></textarea>
+    </view>
+    <view class='line'></view>
+    <view>
+      <radio-group class="radio-group" bindchange="radioChange" name='permision'>
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class='container'>
+      <button type='primary' form-type='submit'>添加心愿</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,22 @@
+<!--登录界面-->
+<view class='container' style="background-image: url('../../images/background1.jpg')">
+ <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+  <form bindsubmit='frmSubmit'>
+    <view class='space'></view>
+    <view class='row'>
+      <text>账号：</text>
+      <input type='text' name="email" placeholder='email' />
+      <!--name与实体类的属性值一样(不分大小写)-->
+    </view>
+    <view class='row'>
+      <text>密码：</text>
+      <input type='password' name="password" placeholder='password' />
+    </view>
+    <view class='space'></view>
+    <view class='row'>
+      <button type='primary' form-type='submit'>登录</button>
+      <button form-type='submit' bindtap='signup'>注册</button>
+    </view>
+  </form>
+  <view class='space1'></view>
+</view>

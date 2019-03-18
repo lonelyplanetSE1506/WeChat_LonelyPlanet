@@ -1,0 +1,9 @@
+var isTure = {
+  timetoStr: function (date) {
+    console.log(date)
+    return date.substring(0, 10)
+  }
+}
+module.exports = {
+  timetoStr: showTime.timetoStr
+}
