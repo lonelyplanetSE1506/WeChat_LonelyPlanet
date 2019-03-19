@@ -13,7 +13,8 @@
     "pages/shudong/shudong",
     "pages/shanliao/shanliao",
     "pages/message/message",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/1to1/1to1"
   ],
   "window":{
     "backgroundTextStyle": "light",

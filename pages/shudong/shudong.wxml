@@ -22,7 +22,9 @@
         <view class='item'>
           <view class='item1'>
             <view class='space1'></view>
-            <rich-text class='buttonA' style='line-height: 12px;color:black;font-size:10pt;'>2018.09.17</rich-text>
+            <!--调用utills里的showTime.wxs函数-->
+            <wxs module="showTime" src="../../utils/showTime.wxs"></wxs>
+            <rich-text class='buttonA' style='line-height: 12px;color:black;font-size:10pt;'>{{showTime.timetoStr(item.wish.relTime)}}</rich-text>
           </view>
           <view class='item2'> 
             <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;</text>
