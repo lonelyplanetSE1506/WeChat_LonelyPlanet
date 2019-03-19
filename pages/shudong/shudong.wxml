@@ -19,12 +19,19 @@
       </view>
       <view class='space'></view>
       <view>
-        <rich-text class='buttonA' style='line-height: 12px;color:black;font-size:10pt;'>2018.09.17</rich-text>
-        <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-        <button class='buttonA' size='mini' bindtap='collection' data-index='{{index}}' data-list='{{list}}' data-wishID='{{item.wish.wishID}}' style='background-color:{{item.hasCollection? collection:nocollection}}'>收藏 {{item.wish.collectionNum}}</button>
-        <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-        <button class='buttonA' size='mini' bindtap="comment" data-index='{{index}}' data-list='{{list}}' data-wishID='{{item.wish.wishID}}' data-isshow='{{item.show}}' style="background-color:{{item.show? show:noshow}}">评论 </button>
-        <!--下拉框-->
+        <view class='item'>
+          <view class='item1'>
+            <view class='space1'></view>
+            <rich-text class='buttonA' style='line-height: 12px;color:black;font-size:10pt;'>2018.09.17</rich-text>
+          </view>
+          <view class='item2'> 
+            <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;</text>
+            <button class='buttonA' size='mini' bindtap='collection' data-index='{{index}}' data-list='{{list}}' data-wishID='{{item.wish.wishID}}' style='background-color:{{item.hasCollection? collection:nocollection}}'>收藏 {{item.wish.collectionNum}}</button>
+            <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+            <button class='buttonA' size='mini' bindtap="comment" data-index='{{index}}' data-list='{{list}}' data-wishID='{{item.wish.wishID}}' data-isshow='{{item.show}}' style="background-color:{{item.show? show:noshow}}">评论 </button>
+          </view> 
+        </view>
+          <!--下拉框-->
 
         <view hidden='{{!item.show}}'>
           <view wx:for="{{commentList}}" wx:for-item='cell'>
