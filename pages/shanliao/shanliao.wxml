@@ -1,2 +1,11 @@
 <!--pages/shanliao/shanliao.wxml-->
-<text>pages/shanliao/shanliao.wxml</text>
+<!--闪聊界面-->
+<view class='container'>
+  <form>
+    <view class='space'></view>
+   
+    <view class='row'>
+      <button bindtap='pipei'>随机匹配</button>
+    </view>
+  </form>
+</view>

@@ -28,9 +28,9 @@
           </view>
           <view class='item2'> 
             <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;</text>
-            <button class='buttonA' size='mini' bindtap='collection' data-index='{{index}}' data-list='{{list}}' data-wishID='{{item.wish.wishID}}' style='background-color:{{item.hasCollection? collection:nocollection}}'>收藏 {{item.wish.collectionNum}}</button>
+            <button size='mini' bindtap='collection' data-index='{{index}}' data-list='{{list}}' data-wishID='{{item.wish.wishID}}' style='background-color:{{item.hasCollection? collection:nocollection}}'>收藏 {{item.wish.collectionNum}}</button>
             <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-            <button class='buttonA' size='mini' bindtap="comment" data-index='{{index}}' data-list='{{list}}' data-wishID='{{item.wish.wishID}}' data-isshow='{{item.show}}' style="background-color:{{item.show? show:noshow}}">评论 </button>
+            <button size='mini' bindtap="comment" data-index='{{index}}' data-list='{{list}}' data-wishID='{{item.wish.wishID}}' data-isshow='{{item.show}}' style="background-color:{{item.show? show:noshow}}">评论 </button>
           </view> 
         </view>
           <!--下拉框-->

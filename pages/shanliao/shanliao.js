@@ -8,6 +8,14 @@ Page({
 
   },
 
+  //点击随机匹配按钮
+  pipei: function () {
+    console.log("匹配成功，进入一对一聊天页面")
+    wx.navigateTo({
+      url: '../1to1/1to1',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

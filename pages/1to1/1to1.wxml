@@ -1,2 +1,166 @@
 <!--pages/1to1/1to1.wxml-->
-<text>pages/1to1/1to1.wxml</text>
+<!--一对一聊天界面-->
+<view>
+  <scroll-view scroll-y="true" style="height:470px;" scroll-top="{{scrollTop}}">
+    <!--第1条-->
+    <view>
+      <view class='space'></view>
+      <view class="wishlist">
+        <view class='space'></view>
+        <view>
+          <view class='itema'>
+            <view class='item1'>
+              <view class='space1'></view>
+              <rich-text decode='{{true}}'style='line-height: 14px;color:green;font-size:12pt;'>昵称</rich-text>
+              <view class='space1'></view>
+            </view>
+            <view class='item2'> 
+              <textarea maxlength='240' style='font-size:10pt;' auto-height='true' value='消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容。'></textarea>
+            </view>
+            <view class='item1'></view> 
+          </view>   
+        </view>
+      </view>
+    </view>
+
+    <!--第2条-->
+    <view>
+      <view class='space'></view>
+      <view class="wishlist">
+        <view class='space'></view>
+        <view>
+          <view class='itemb'>
+            <view class='item1'>
+              <view class='space1'></view>
+              <rich-text decode='{{true}}'style='line-height: 14px;color:green;font-size:12pt;'>昵称</rich-text>
+              <view class='space1'></view>
+            </view>
+            <view class='item2'> 
+              <textarea maxlength='240' style='font-size:10pt;' auto-height='true' value='消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容。'></textarea>
+            </view>
+            <view class='item1'></view> 
+          </view>   
+        </view>
+      </view>
+    </view>
+
+    <!--第3条-->
+    <view>
+      <view class='space'></view>
+      <view class="wishlist">
+        <view class='space'></view>
+        <view>
+          <view class='itema'>
+            <view class='item1'>
+              <view class='space1'></view>
+              <rich-text decode='{{true}}'style='line-height: 14px;color:green;font-size:12pt;'>昵称</rich-text>
+              <view class='space1'></view>
+            </view>
+            <view class='item2'> 
+              <textarea maxlength='240' style='font-size:10pt;' auto-height='true' value='消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容。'></textarea>
+            </view>
+            <view class='item1'></view> 
+          </view>   
+        </view>
+      </view>
+    </view>
+
+    <!--第4条-->
+    <view>
+      <view class='space'></view>
+      <view class="wishlist">
+        <view class='space'></view>
+        <view>
+          <view class='itemb'>
+            <view class='item1'>
+              <view class='space1'></view>
+              <rich-text decode='{{true}}'style='line-height: 14px;color:green;font-size:12pt;'>昵称</rich-text>
+              <view class='space1'></view>
+            </view>
+            <view class='item2'> 
+              <textarea maxlength='240' style='font-size:10pt;' auto-height='true' value='消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容。'></textarea>
+            </view>
+            <view class='item1'></view> 
+          </view>   
+        </view>
+      </view>
+    </view>
+
+    <!--第5条-->
+    <view>
+      <view class='space'></view>
+      <view class="wishlist">
+        <view class='space'></view>
+        <view>
+          <view class='itema'>
+            <view class='item1'>
+              <view class='space1'></view>
+              <rich-text decode='{{true}}'style='line-height: 14px;color:green;font-size:12pt;'>昵称</rich-text>
+              <view class='space1'></view>
+            </view>
+            <view class='item2'> 
+              <textarea maxlength='240' style='font-size:10pt;' auto-height='true' value='消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容。'></textarea>
+            </view>
+            <view class='item1'></view> 
+          </view>   
+        </view>
+      </view>
+    </view>
+
+    <!--第6条-->
+    <view>
+      <view class='space'></view>
+      <view class="wishlist">
+        <view class='space'></view>
+        <view>
+          <view class='itema'>
+            <view class='item1'>
+              <view class='space1'></view>
+              <rich-text decode='{{true}}'style='line-height: 14px;color:green;font-size:12pt;'>昵称</rich-text>
+              <view class='space1'></view>
+            </view>
+            <view class='item2'> 
+              <textarea maxlength='240' style='font-size:10pt;' auto-height='true' value='消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容。'></textarea>
+            </view>
+            <view class='item1'></view> 
+          </view>   
+        </view>
+      </view>
+    </view>
+
+    <!--第7条-->
+    <view>
+      <view class='space'></view>
+      <view class="wishlist">
+        <view class='space'></view>
+        <view>
+          <view class='itemb'>
+            <view class='item1'>
+              <view class='space1'></view>
+              <rich-text decode='{{true}}'style='line-height: 14px;color:green;font-size:12pt;'>昵称</rich-text>
+              <view class='space1'></view>
+            </view>
+            <view class='item2'> 
+              <textarea maxlength='240' style='font-size:10pt;' auto-height='true' value='消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容，消息内容。'></textarea>
+            </view>
+            <view class='item1'></view> 
+          </view>   
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view>
+    <view>
+        <view class='itema'>
+          <view class='item3'>
+            <view class='row'>
+              <input type='text' name="message" placeholder='请输入' />
+            </view>
+          </view>
+          <view class='item4'>
+            <button size='mini' style='background-color:blue'>发送</button> 
+          </view>
+        </view>   
+      </view>
+  </view>
+</view>

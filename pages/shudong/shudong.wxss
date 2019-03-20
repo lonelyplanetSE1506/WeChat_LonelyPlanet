@@ -97,9 +97,7 @@
   border: 1rpx solid #ddd !important;
   color: #666 !important;
 }
-.buttonA{
-  display: inline;
-}
+
 
 .item{
   display: flex;
