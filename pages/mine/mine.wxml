@@ -1,0 +1,21 @@
+<i-panel class="cell-panel-demo">
+  <i-cell-group>
+    <i-cell title="我的资料" value="95后，男"></i-cell>
+    <i-cell title="我的昵称" is-link url="" value="你的昵称"></i-cell>
+  </i-cell-group>
+</i-panel>
+
+<i-panel class="cell-panel-demo">
+  <i-cell-group>
+    <i-cell title="我喜欢的心愿" is-link url=""></i-cell>
+    <i-cell title="我评论的心愿" is-link url=""></i-cell>
+    <i-cell title="我发布的心愿" is-link url=""></i-cell>
+  </i-cell-group>
+</i-panel>
+
+<i-panel class="cell-panel-demo">
+  <i-cell-group>
+    <i-cell title="意见反馈" is-link url=""></i-cell>
+    <i-cell title="退出" is-link url=""></i-cell>
+  </i-cell-group>
+</i-panel>

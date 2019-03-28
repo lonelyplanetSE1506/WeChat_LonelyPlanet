@@ -13,9 +13,9 @@
     "pages/shudong/shudong",
     "pages/shanliao/shanliao",
     "pages/message/message",
-    "pages/my/my",
     "pages/1to1/1to1",
-    "pages/new_shudong/new_shudong"
+    "pages/new_shudong/new_shudong",
+    "pages/mine/mine"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -59,7 +59,7 @@
       {
         "selectedIconPath": "images/心愿海1.png",
         "iconPath": "images/心愿海2.png",
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/mine/mine",
         "text": "我"
       }
     ]
