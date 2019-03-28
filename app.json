@@ -19,18 +19,15 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#26A5FF",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "孤独星球",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
   },
   "tabBar": {
-    "color": "#8a8a8a",
-    "selectedColor": "#1296db",
-    "borderStyle": "white",
     "list": [
       {
         "selectedIconPath": "images/首页1.png",
