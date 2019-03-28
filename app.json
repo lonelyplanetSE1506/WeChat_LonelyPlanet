@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/login/login",
     "pages/logs/logs",
@@ -14,15 +14,15 @@
     "pages/shanliao/shanliao",
     "pages/message/message",
     "pages/my/my",
-    "pages/1to1/1to1"
+    "pages/1to1/1to1",
+    "pages/new_shudong/new_shudong"
   ],
-  "window":{
+  "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#26A5FF",
     "navigationBarTitleText": "孤独星球",
     "navigationBarTextStyle": "white"
   },
-
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
@@ -35,7 +35,13 @@
       {
         "selectedIconPath": "images/首页1.png",
         "iconPath": "images/首页2.png",
-        "pagePath":"pages/shudong/shudong",
+        "pagePath": "pages/new_shudong/new_shudong",
+        "text": "树洞"
+      },
+      {
+        "selectedIconPath": "images/首页1.png",
+        "iconPath": "images/首页2.png",
+        "pagePath": "pages/shudong/shudong",
         "text": "树洞"
       },
       {
@@ -47,7 +53,7 @@
       {
         "selectedIconPath": "images/树洞1.png",
         "iconPath": "images/树洞2.png",
-        "pagePath":"pages/message/message",
+        "pagePath": "pages/message/message",
         "text": "消息"
       },
       {
