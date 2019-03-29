@@ -12,4 +12,11 @@
         </i-row>
       </view>
   </i-card>
+<text>评论：</text>
+<view wx:for="{{commentList}}">
+  <i-card title="卡片标题" extra="{{item.nikeName}}" >
+    <view slot="content">{{item.cmcontent}}</view>
+    <view slot="footer">{{showTime.timetoStr(item.cmtime)}}</view>
+</i-card>
+</view>
 </scroll-view>

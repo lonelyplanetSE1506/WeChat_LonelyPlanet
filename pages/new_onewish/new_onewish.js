@@ -32,9 +32,6 @@ Page({
       data: {}, //是否有数据传到服务器
       success: function (res) {
         var listData = res.data;
-
-        console.log(res.data)
-        console.log(listData)
         if (listData == null) {
           var toastText = "返回数据失败" + res.data.errMsg;
           wx.showToast({
@@ -44,13 +41,24 @@ Page({
           });
         } else {
           that.setData({
-            wish: listData.oneWish,
+            wish: listData.oneWish
           })
+          wx.setNavigationBarTitle({ title: listData.oneWish.title })
         }
       }
     })
     //评论列表
-
+    wx.request({
+      url: 'http://localhost:8080/weChatgetComment/' + this.data.wishid,
+      data: {},
+      method: "GET",
+      success: function (res) {
+        console.log(res.data.commentsList)
+        that.setData({
+          commentList: res.data.commentsList,
+        });
+      }
+    })
   },
 
   /**
