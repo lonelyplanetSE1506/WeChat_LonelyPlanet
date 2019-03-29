@@ -15,7 +15,8 @@
     "pages/message/message",
     "pages/1to1/1to1",
     "pages/new_shudong/new_shudong",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/new_onewish/new_onewish"
   ],
   "window": {
     "backgroundTextStyle": "light",

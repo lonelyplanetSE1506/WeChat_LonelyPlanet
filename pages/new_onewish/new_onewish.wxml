@@ -1,0 +1,15 @@
+<!--pages/tree/tree.wxml-->
+<wxs module="showTime" src="../../utils/showTime.wxs"></wxs>
+
+<scroll-view style='padding-top:40px'>
+  <i-card title="{{wish.title}}" extra="{{wish.accountInfo.nikeName}}" full="true">
+      <view slot="content"><text>{{wish.content}}</text></view>
+      <view slot="footer">
+        <i-row>
+          <i-col span="16" i-class="col-class">{{showTime.timetoStr(wish.relTime)}}</i-col>
+          <i-col span="4" i-class="col-class"><i-icon type="collection" style='color:#009ad6;' size='20' /><text style='color:#009ad6;'>收藏 {{wish.collectionNum}}</text></i-col>
+          <i-col span="4" i-class="col-class"><i-icon type="interactive" style='color:#009ad6;' size='20' /><text style='color:#009ad6;'>评论 {{wish.commentNum}}</text></i-col>
+        </i-row>
+      </view>
+  </i-card>
+</scroll-view>

@@ -3,7 +3,16 @@ const { $Message } = require('../../dist/base/index');
 Page({
   data: {
     current: 'tab1',
-    list: []
+    wish: [],
+    commentList: [],
+    wishid: 0
+  },
+
+  onLoad: function (options) {
+    // 页面初始化 options为页面跳转所带来的参数
+    this.setData({
+      wishid: options.wishid
+    })
   },
 
   handleChange({ detail }) {
@@ -18,7 +27,7 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/PublicWish/', //请求的URL地址
+      url: 'http://localhost:8080/weChatGetOneWish/' + this.data.wishid, //请求的URL地址
       method: "GET", //请求方式
       data: {}, //是否有数据传到服务器
       success: function (res) {
@@ -35,12 +44,12 @@ Page({
           });
         } else {
           that.setData({
-            list: listData.publicWishList,
+            wish: listData.oneWish,
           })
         }
       }
     })
-    //console.log(list)  
+    //评论列表
 
   },
 
@@ -77,11 +86,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  tapOneWish:function(e){
-    wx.navigateTo({
-      url: '/pages/new_onewish/new_onewish?wishid=' + e.currentTarget.dataset.wishid
-    })
   }
 });
