@@ -46,8 +46,8 @@
       {
         "selectedIconPath": "images/首页1.png",
         "iconPath": "images/首页2.png",
-        "pagePath": "pages/shanliao/shanliao",
-        "text": "测试"
+        "pagePath": "pages/addwish/addwish",
+        "text": "发布"
       },
       {
         "selectedIconPath": "images/树洞1.png",

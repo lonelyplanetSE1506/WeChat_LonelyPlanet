@@ -31,3 +31,23 @@
     </view>
   </form>
 </view>
+
+<form bindsubmit='frmAddwish'>
+    <i-panel title="标题">
+        <i-input name='title' type="textarea"  placeholder="标题" maxlength="30"/>
+    </i-panel>
+    <i-panel title="内容240">
+        <i-input name='content' type="textarea"  placeholder="评论内容240字" maxlength="240"/>
+    </i-panel>
+  <i-panel title="可见性">
+      <radio-group bindchange="radioChange" name='permision'>
+        <block  wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </block>
+      </radio-group>
+  </i-panel>
+  
+  <view>
+    <button bindclick="frmAddwish" type="primary" shape="circle">发表评论</button>
+  </view>
+</form>

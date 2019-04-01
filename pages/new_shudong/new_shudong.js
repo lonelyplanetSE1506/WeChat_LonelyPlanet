@@ -3,13 +3,27 @@ const { $Message } = require('../../dist/base/index');
 Page({
   data: {
     current: 'tab1',
-    list: []
+    list: [],
+    showTab1: true,
+    showTab2: false
   },
 
   handleChange({ detail }) {
     this.setData({
       current: detail.key
     });
+    if (detail.key=="tab1"){
+      this.setData({
+        showTab1: true,
+        showTab2: false
+      });
+    }
+    else {
+      this.setData({
+        showTab1: false,
+        showTab2: true
+      });
+    }
   },
 
   /**
