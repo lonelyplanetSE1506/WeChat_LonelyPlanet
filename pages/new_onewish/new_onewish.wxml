@@ -15,15 +15,17 @@
 <text>评论：</text>
 <scroll-view style='padding-top:40px' scroll-y style="height: 450px;">
   <view wx:for="{{commentList}}">
-    <i-card title="{{item.accountInfo.nikeName}}:" extra="" >
+    <i-card title="{{item.accountInfo.nikeName}}:" extra="" full="true">
       <view slot="content">{{item.cmcontent}}</view>
       <view slot="footer">{{showTime.timetoStr(item.cmtime)}}</view>
   </i-card>
   </view>
 </scroll-view>
-<i-row>
-    <i-col span="8" i-class="col-class"><i-button bind:click="handleSuccess" shape="circle" size="small" type='info'>收藏</i-button></i-col>
-    <i-col span="8" i-class="col-class"><i-button bind:click="handleComment" shape="circle" size="small" type="info">评论</i-button></i-col>
-    <i-col span="8" i-class="col-class"><i-button bind:click="handleChat" shape="circle" size="small" type="info">私聊</i-button></i-col>
-</i-row>
+<view style="position:fixed; bottom:0;width:100%">
+  <i-row>
+      <i-col span="8" i-class="col-class"><i-button bind:click="handleSuccess" shape="circle" size="small" type='info'>收藏</i-button></i-col>
+      <i-col span="8" i-class="col-class"><i-button bind:click="handleComment" shape="circle" size="small" type="info">评论</i-button></i-col>
+      <i-col span="8" i-class="col-class"><i-button bind:click="handleChat" shape="circle" size="small" type="info">私聊</i-button></i-col>
+  </i-row>
+</view>
 <i-message id="message" />

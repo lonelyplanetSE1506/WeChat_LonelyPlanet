@@ -16,7 +16,8 @@
     "pages/1to1/1to1",
     "pages/new_shudong/new_shudong",
     "pages/mine/mine",
-    "pages/new_onewish/new_onewish"
+    "pages/new_onewish/new_onewish",
+    "pages/new_addComment/new_addComment"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -46,7 +47,7 @@
         "selectedIconPath": "images/首页1.png",
         "iconPath": "images/首页2.png",
         "pagePath": "pages/shanliao/shanliao",
-        "text": "闪聊"
+        "text": "测试"
       },
       {
         "selectedIconPath": "images/树洞1.png",

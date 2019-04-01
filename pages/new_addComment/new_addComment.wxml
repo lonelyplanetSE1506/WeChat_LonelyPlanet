@@ -1,0 +1,11 @@
+<form bindsubmit='addcomment'>
+    <i-panel title="发表评论">
+        <i-input value="{{ CMContent }}" type="textarea"  placeholder="评论内容140字" maxlength="140"/>
+    </i-panel>
+
+  <view style="position:fixed; bottom:0;width:100%">
+    <i-button bind:click="handleClick" type="ghost" shape="circle">返回</i-button>
+    <i-button form-type='submit' type="primary" shape="circle">发表评论</i-button>
+  </view>
+
+</form>
