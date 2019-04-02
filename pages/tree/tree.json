@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "树洞"
+  "navigationBarTitleText": "我发布的心愿",
+  "usingComponents": {
+    "i-cell-group": "../../dist/cell-group/index",
+    "i-cell": "../../dist/cell/index"
+  }
 }

@@ -1,46 +1,7 @@
-<!--树洞界面-->
-<scroll-view style="background-image: url('../../images/background8.jpg')">
-  <view class='container'>
-    <rich-text nodes="{{nodesa}}"></rich-text>
-  </view>
+<!--我发布的心愿-->
 
-  <block wx:for="{{list}}">
-    <view class='line'></view>
-    <view class='space'></view>
-    <view class="wishlist">
-      <view>
-        <rich-text style='line-height: 30px;color:red;font-size:20pt;'>标题：{{item.title}}</rich-text>
-      </view>
-
-      <view class='space'></view>
-      <view>
-        <rich-text style='line-height: 15px;color:green;font-size:15pt;'>内容：</rich-text>
-        <view class='space'></view>
-      </view>
-      <view>
-        <textarea maxlength='240' style='border:5rpx solid yellowgreen;width:100%' value='{{item.content}}'></textarea><!--心愿内容-->
-      </view>
-      <view class='space'></view>
-      <view>
-      <!--添加空格-->
-        <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-        <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-        <text>时间：</text>
-        <wxs module="showTime" src="../../utils/showTime.wxs"></wxs>
-           <text>{{showTime.timetoStr(item.relTime)}}</text>
-      </view>
-      <view class='space'></view>
-      <view>
-        <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-        <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
-        <button size='mini' class='delete-btn' bindtap='deleteWish' data-wishID='{{item.wishID}}' data-title='{{item.title}}' hover-class='d_btn_hover'>删除</button>
-      </view>
-      </view>
-  </block>
-
-  <view class="round-click">
-    <navigator url='/pages/addwish/addwish'>添加心愿</navigator>
-  </view>
-
-
-</scroll-view>
+<block wx:for="{{list}}">
+  <i-cell-group>
+    <i-cell title="{{item.title}}"  label="5小时前"  is-link url='../new_onewish/new_onewish?wishid={{item.wishID}}'></i-cell>
+  </i-cell-group>
+</block>

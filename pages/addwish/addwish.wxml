@@ -36,7 +36,7 @@
     <i-panel title="标题">
         <i-input name='title' type="textarea"  placeholder="标题" maxlength="30"/>
     </i-panel>
-    <i-panel title="内容240">
+    <i-panel title="内容">
         <i-input name='content' type="textarea"  placeholder="评论内容240字" maxlength="240"/>
     </i-panel>
   <i-panel title="可见性">
@@ -48,6 +48,6 @@
   </i-panel>
   
   <view>
-    <button bindclick="frmAddwish" type="primary" shape="circle">发表评论</button>
+    <button bindclick="frmAddwish" type="primary" shape="circle">发表心愿</button>
   </view>
 </form>
