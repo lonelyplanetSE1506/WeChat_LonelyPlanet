@@ -1,5 +1,6 @@
 // 注册界面
-
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
@@ -11,7 +12,7 @@ Page({
   signupSubmit: function (e) {
     var frmData = e.detail.value;
     wx.request({//注册请求
-      url: 'http://localhost:8080/weChatSignup',
+      url: app.globalData.myUrl+'/weChatSignup',
       method: "POST",
       data: JSON.stringify(frmData), //{"email":"Kobe","password":"12345678"}
       header: {
@@ -48,7 +49,7 @@ Page({
                       var location = r.data.result.address_component.nation + r.data.result.address_component.province +
                         r.data.result.address_component.city + r.data.result.address_component.district;
                       wx.request({
-                        url: 'http://localhost:8080/weChataddLog/' + ip + ':' + location,
+                        url: app.globalData.myUrl+'/weChataddLog/' + ip + ':' + location,
                         data: {},
                         method: "GET",
                         success: function () {

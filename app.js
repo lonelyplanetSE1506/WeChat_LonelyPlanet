@@ -34,6 +34,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    //实机调试时可改为局域网地址
+    myUrl: "http://localhost:8080"
   }
 })

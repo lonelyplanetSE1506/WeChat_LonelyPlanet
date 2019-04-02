@@ -1,4 +1,7 @@
 // pages/shudong/shudong.js
+//获取应用实例
+const app = getApp()
+
 Page({
 
   /**
@@ -35,7 +38,7 @@ Page({
       //返回list
       // console.log(e)
       wx.request({
-        url: 'http://localhost:8080/weChatgetComment/' + wishid,
+        url: app.globalData.myUrl+'/weChatgetComment/' + wishid,
         data: {},
         method: "GET",
         success: function (res) {
@@ -66,7 +69,7 @@ Page({
     var frmData = e.detail.value;
     console.log(frmData);
     wx.request({
-      url: 'http://localhost:8080/weChatAddComment/' + wishid + ':' + cmcontent,
+      url: app.globalData.myUrl+'/weChatAddComment/' + wishid + ':' + cmcontent,
       data: {},
       method: "GET",
       success: function (res) {
@@ -112,7 +115,7 @@ Page({
     console.log(gg);
     //console.log(that.data)
     wx.request({
-      url: 'http://localhost:8080/isGood/' + wishid,
+      url: app.globalData.myUrl+'/isGood/' + wishid,
       data: {},
       method: 'GET',
       success: function (r) {
@@ -161,7 +164,7 @@ Page({
     console.log(gg);
     //console.log(that.data)
     wx.request({
-      url: 'http://localhost:8080/isCollection/' + wishid,
+      url: app.globalData.myUrl+'/isCollection/' + wishid,
       data: {},
       method: 'GET',
       success: function (r) {
@@ -201,7 +204,7 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/PublicWish/', //请求的URL地址
+      url: app.globalData.myUrl+'/PublicWish/', //请求的URL地址
       method: "GET", //请求方式
       data: {}, //是否有数据传到服务器
       success: function (res) {

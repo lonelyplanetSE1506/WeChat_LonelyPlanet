@@ -1,4 +1,7 @@
 //添加心愿
+//获取应用实例
+const app = getApp()
+
 Page({
   data: {
     //添加权限，1为所有人可见，0为仅自己可见
@@ -28,7 +31,7 @@ Page({
     var frmData = e.detail.value;
    console.log(frmData);
    wx.request({//发送添加心愿请求
-     url: 'http://localhost:8080/weChatAddWish',
+     url: app.globalData.myUrl+'/weChatAddWish',
      method: "POST",
      data: JSON.stringify(frmData),//{"email":"Kobe","password":"12345678"}
      header: { "Content-Type": "application/json" },

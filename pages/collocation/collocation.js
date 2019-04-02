@@ -1,4 +1,7 @@
 //我的收藏
+//获取应用实例
+const app = getApp()
+
 Page({
 
   /**
@@ -29,7 +32,7 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/reCollection/', //请求的URL地址
+      url: app.globalData.myUrl+'/reCollection/', //请求的URL地址
       method: "GET", //请求方式
       data: {}, //是否有数据传到服务器
       success: function (res) {

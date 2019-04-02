@@ -1,5 +1,7 @@
 // 树洞页面
 var util = require('../../utils/util.js');  
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
@@ -33,7 +35,7 @@ Page({
       confirmText: "是", //默认是“确定”
       success: function(sm) {
         wx.request({//发送删除请求
-          url: 'http://localhost:8080/weChatDeleteWish/' + e.target.dataset.wishid,
+          url: app.globalData.myUrl+'/weChatDeleteWish/' + e.target.dataset.wishid,
           data: {},
           method: "GET",
           success: function(res) {
@@ -107,7 +109,7 @@ Page({
   onShow: function() {
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/reWish/', //请求的URL地址
+      url: app.globalData.myUrl+'/reWish/', //请求的URL地址
       method: "GET", //请求方式
       data: {}, //是否有数据传到服务器
       success: function(res) {

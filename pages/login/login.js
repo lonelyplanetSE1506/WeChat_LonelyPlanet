@@ -1,13 +1,16 @@
 //登录界面
 const util = require('../../utils/util.js')
 const self = this
+//获取应用实例
+const app = getApp()
+
 Page({
   frmSubmit: function (e) {
     var frmData = e.detail.value;
     var ip = "1001.01.10";
     var result = true;
     wx.request({//发送登录请求
-      url: 'http://localhost:8080/weChatLogin',
+      url: app.globalData.myUrl+'/weChatLogin',
       method: "POST",
       data: JSON.stringify(frmData),//{"email":"Kobe","password":"12345678"}
       header: { "Content-Type": "application/json" },
@@ -40,7 +43,7 @@ Page({
                       location = r.data.result.address_component.nation + r.data.result.address_component.province +
                         r.data.result.address_component.city + r.data.result.address_component.district;                      
                       wx.request({
-                        url: 'http://localhost:8080/weChataddLog/' + ip + ':' + location,
+                        url: app.globalData.myUrl+'/weChataddLog/' + ip + ':' + location,
                         data: {},
                         method: "GET",
                         success: function () {
