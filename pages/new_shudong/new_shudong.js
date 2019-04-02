@@ -9,6 +9,53 @@ Page({
     showTab1: true,
     showTab2: false
   },
+  
+  collection: function (e) {
+    console.log(e)
+    var that = this;
+    var wishid = e.currentTarget.dataset.wishid;
+    var index = e.currentTarget.dataset.index;
+    var gg = e.currentTarget.dataset.list[index].hasCollection;
+    var num = e.currentTarget.dataset.list[index].wish.collectionNum;
+    console.log(gg);
+    e.currentTarget.dataset.list[index].hasCollection = !gg;
+    gg = e.currentTarget.dataset.list[index].hasCollection;//修改index的isGood的值
+    console.log(gg);
+    //console.log(that.data)
+    wx.request({
+      url: app.globalData.myUrl + '/isCollection/' + wishid,
+      data: {},
+      method: 'GET',
+      success: function (r) {
+        console.log(r.data)
+        //console.log(that.list)
+        if (r.data == true) {
+          num = num + 1;
+          e.currentTarget.dataset.list[index].wish.collectionNum = num;
+          that.setData({
+            list: e.currentTarget.dataset.list
+          });
+          wx.showToast({
+            title: "收藏成功",
+            icon: '',
+            duration: 2000
+          });
+        }
+        else {
+          num = num - 1;
+          e.currentTarget.dataset.list[index].wish.collectionNum = num;
+          that.setData({
+            list: e.currentTarget.dataset.list
+          });
+          wx.showToast({
+            title: "已经取消收藏！",
+            icon: '',
+            duration: 2000
+          });
+        }
+      }
+    })
+  },
 
   handleChange({ detail }) {
     this.setData({

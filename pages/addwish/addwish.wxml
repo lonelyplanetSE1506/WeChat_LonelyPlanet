@@ -1,53 +1,25 @@
 <!--添加心愿-->
-<view style="background-image: url('../../images/background13.jpg')">
-  <form bindsubmit='frmAddwish'>
-    <view>
-      <view class='space'></view>
-      <view>
-        <rich-text style='line-height: 20px;color:red;font-size:20pt;'>标题：</rich-text>
-      </view>
-      <view class='space'></view>
-      <input type='text' name='title' placeholder='title'></input>
-    </view>
-    <view class='line'></view>
-    <view>
-      <view class='space'></view>
-      <view>
-        <rich-text style='line-height: 20px;color:red;font-size:20pt;'>内容：</rich-text>
-      </view>
-      <view class='space'></view>
-      <textarea placeholder='content' name='content' maxlength='240'></textarea>
-    </view>
-    <view class='line'></view>
-    <view>
-      <radio-group class="radio-group" bindchange="radioChange" name='permision'>
-        <label class="radio" wx:for="{{items}}">
-          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-        </label>
-      </radio-group>
-    </view>
-    <view class='container'>
-      <button type='primary' form-type='submit'>添加心愿</button>
-    </view>
-  </form>
-</view>
 
+<i-toast id="toast" />
 <form bindsubmit='frmAddwish'>
     <i-panel title="标题">
-        <i-input name='title' type="textarea"  placeholder="标题" maxlength="30"/>
+        <i-input value="{{ wish.title }}" bind:change="titleInputChange" type="textarea"  placeholder="标题" maxlength="30"/>
     </i-panel>
     <i-panel title="内容">
-        <i-input name='content' type="textarea"  placeholder="评论内容240字" maxlength="240"/>
+        <i-input value="{{ wish.content }}" bind:change="contentInputChange" type="textarea"  placeholder="评论内容240字" maxlength="240"/>
     </i-panel>
-  <i-panel title="可见性">
-      <radio-group bindchange="radioChange" name='permision'>
-        <block  wx:for="{{items}}">
-          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-        </block>
-      </radio-group>
-  </i-panel>
   
-  <view>
-    <button bindclick="frmAddwish" type="primary" shape="circle">发表心愿</button>
+
+<i-cell-group>
+    <i-cell title="所有人可见">
+        <i-switch value="{{ wish.permision }}" size="large" bind:change="onChange" slot="footer">
+            <view slot="open">开启</view>
+            <view slot="close">关闭</view>
+        </i-switch>
+    </i-cell>
+</i-cell-group>
+
+  <view style="position:fixed; bottom:0;width:100%">
+    <i-button bind:click="testSubmit" type="primary" shape="circle">发布心愿</i-button>
   </view>
 </form>

@@ -17,7 +17,8 @@
     "pages/new_shudong/new_shudong",
     "pages/mine/mine",
     "pages/new_onewish/new_onewish",
-    "pages/new_addComment/new_addComment"
+    "pages/new_addComment/new_addComment",
+    "pages/Test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -52,7 +53,7 @@
       {
         "selectedIconPath": "images/树洞1.png",
         "iconPath": "images/树洞2.png",
-        "pagePath": "pages/message/message",
+        "pagePath": "pages/Test/test",
         "text": "消息"
       },
       {
