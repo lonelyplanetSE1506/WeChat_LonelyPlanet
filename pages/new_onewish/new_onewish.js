@@ -7,26 +7,78 @@ Page({
     current: 'tab1',
     wish: [],
     commentList: [],
-    wishid: 0
+    wishid: 0,
+    isLiked: 0,
+    likeStr: "收藏"
   },
 
-  handleSuccess() {
-    $Message({
-      content: '收藏成功！',
-      type: 'info'
-    });
+  handleLike() {
+    
+    var that = this
+
+    wx.request({
+      url: app.globalData.myUrl + '/isCollection/' + this.data.wishid,
+      data: {},
+      method: 'GET',
+      success: function (r) {
+        console.log(r.data)
+        if (r.data == true) {
+          that.setData({
+            isLiked: true,
+            likeStr: "已收藏"
+          });
+          $Message({
+            content: '收藏成功！',
+            type: 'info'
+          });
+        }
+        else {
+          that.setData({
+            isLiked: false,
+            likeStr: "收藏"
+          });
+          $Message({
+            content: '取消收藏',
+            type: 'info'
+          });
+        }
+      }
+    })
+
   },
 
-  handleComment: function (e) {
+  handleComment: function () {
     wx.navigateTo({
-      url: '/pages/new_addComment/new_addComment?wishid=' + e.currentTarget.dataset.wishid
+      url: '/pages/new_addComment/new_addComment?wishid=' + this.data.wishid
     })
   },
 
   onLoad: function (options) {
+    var that = this
     // 页面初始化 options为页面跳转所带来的参数
     this.setData({
       wishid: options.wishid
+    })
+
+    wx.request({
+      url: app.globalData.myUrl + '/checkCollection/' + this.data.wishid,
+      data: {},
+      method: 'GET',
+      success: function (r) {
+        console.log(r.data)
+        if (r.data == true) {
+          that.setData({
+            isLiked: true,
+            likeStr: "已收藏"
+          });
+        }
+        else {
+          that.setData({
+            isLiked: false,
+            likeStr: "收藏"
+          });
+        }
+      }
     })
   },
 

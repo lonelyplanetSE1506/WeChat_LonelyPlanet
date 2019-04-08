@@ -20,6 +20,7 @@
     "i-sticky": "../../dist/sticky/index",
     "i-sticky-item": "../../dist/sticky-item/index",
     "i-message": "../../dist/message/index",
-    "i-input": "../../dist/input/index"
+    "i-input": "../../dist/input/index",
+    "i-toast": "../../dist/toast/index"
   }
 }

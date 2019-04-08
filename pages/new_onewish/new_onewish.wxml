@@ -23,7 +23,7 @@
 </scroll-view>
 <view style="position:fixed; bottom:0;width:100%">
   <i-row>
-      <i-col span="8" i-class="col-class"><i-button bind:click="handleSuccess" shape="circle" size="small" type='info'>收藏</i-button></i-col>
+      <i-col span="8" i-class="col-class"><i-button bind:click="handleLike" shape="circle" size="small" type='info'><text>{{likeStr}}</text></i-button></i-col>
       <i-col span="8" i-class="col-class"><i-button bind:click="handleComment" shape="circle" size="small" type="info">评论</i-button></i-col>
       <i-col span="8" i-class="col-class"><i-button bind:click="handleChat" shape="circle" size="small" type="info">私聊</i-button></i-col>
   </i-row>

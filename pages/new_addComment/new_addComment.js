@@ -1,13 +1,22 @@
 // pages/new_addComment/new_addComment.js
+//获取应用实例
+const app = getApp()
+const { $Toast } = require('../../dist/base/index');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    CMContent: '',
+    cmcontent: "",
     wishid: 0,
     accountID: {}
+  },
+  cmcontentInputChange(e) {
+    this.setData({
+      cmcontent: e.detail.detail.value
+    })
+    console.log(this.data.cmcontent)
   },
 
   /**
@@ -18,6 +27,7 @@ Page({
     this.setData({
       wishid: options.wishid
     })
+    console.log(this.data.wishid)
   },
 
   /**
@@ -68,27 +78,32 @@ Page({
   onShareAppMessage: function () {
 
   },
-  //添加评论  待完成
+  //添加评论
   addcomment: function (e) {
     var that = this;
-    var wishid = e.currentTarget.dataset.wishid;
-    //e.target.dataset.wishid,
+    var wishid = that.data.wishid
     console.log(wishid)
-    var cmcontent = e.currentTarget.dataset.CMContent;
-    //console.log(cmcontent);
-    var frmData = e.detail.value;
-    console.log(frmData);
+    var cmcontent = that.data.cmcontent;
+    console.log(cmcontent);
     wx.request({
-      url: 'http://localhost:8080/weChatAddComment/' + wishid + ':' + cmcontent,
+      url: app.globalData.myUrl+'/weChatAddComment/' + wishid + ':' + cmcontent,
       data: {},
       method: "GET",
       success: function (res) {
-        console.log(res.data.commentsList)
-        that.setData({
-          commentList: res.data.commentsList,
-          list: e.currentTarget.dataset.list,
+        $Toast({
+          content: '评论成功',
+          type: 'success'
         });
+        wx.navigateBack({
+          delta: 1//想要返回的层级
+        })
       }
+    })
+  },
+
+  backClick() {
+    wx.navigateBack({
+      delta: 1//想要返回的层级
     })
   }
 })

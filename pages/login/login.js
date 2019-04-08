@@ -57,7 +57,7 @@ Page({
             }
           });
           wx.switchTab({
-            url: '../shudong/shudong',//跳转到树洞页面
+            url: '../new_shudong/new_shudong',//跳转到树洞页面
           })
           //console.log(result)
         }
