@@ -1,0 +1,13 @@
+<form bindsubmit='addName'>
+    <i-panel title="修改昵称">
+        <i-input value="{{ accountName }}" bind:change="nameInputChange" type="text"  placeholder="昵称20字以内" maxlength="20"/>
+    </i-panel>
+
+  <view style="position:fixed; bottom:0;width:100%">
+    <i-button bind:click="backClick" type="ghost" shape="circle">返回</i-button>
+    <i-button bind:click="addName" type="primary" shape="circle">提交</i-button>
+  </view>
+
+</form>
+
+<i-toast id="toast" />

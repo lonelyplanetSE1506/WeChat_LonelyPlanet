@@ -1,14 +1,14 @@
 <i-panel class="cell-panel-demo">
   <i-cell-group>
     <i-cell title="我的资料" value="95后，男"></i-cell>
-    <i-cell title="我的昵称" is-link url="" value="{{nikename}}"></i-cell>
+    <i-cell title="我的昵称" is-link url="/pages/editMyName/editMyName?name={{nikename}}" value="{{nikename}}"></i-cell>
   </i-cell-group>
 </i-panel>
 
 <i-panel class="cell-panel-demo">
   <i-cell-group>
     <i-cell title="我喜欢的心愿" is-link url="/pages/collocation/collocation"></i-cell>
-    <i-cell title="我评论的心愿" is-link url=""></i-cell>
+    <i-cell title="我评论的心愿" is-link url="/pages/myCommentWish/myCommentWish"></i-cell>
     <i-cell title="我发布的心愿" is-link url="/pages/tree/tree"></i-cell>
   </i-cell-group>
 </i-panel>

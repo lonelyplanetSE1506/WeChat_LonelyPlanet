@@ -1,7 +1,7 @@
 <!--我发布的心愿-->
-
+<wxs module="showTime" src="../../utils/showTime.wxs"></wxs>
 <block wx:for="{{list}}">
   <i-cell-group>
-    <i-cell title="{{item.title}}"  label="5小时前"  is-link url='../new_onewish/new_onewish?wishid={{item.wishID}}'></i-cell>
+    <i-cell title="{{item.title}}"  label="{{showTime.timetoStr(item.relTime)}}"  is-link url='../new_onewish/new_onewish?wishid={{item.wishID}}'></i-cell>
   </i-cell-group>
 </block>

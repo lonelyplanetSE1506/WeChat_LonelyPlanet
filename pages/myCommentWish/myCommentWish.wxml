@@ -1,0 +1,7 @@
+
+<wxs module="showTime" src="../../utils/showTime.wxs"></wxs>
+<block wx:for="{{list}}">
+  <i-cell-group>
+      <i-cell title="{{item.title}}"  label="{{showTime.timetoStr(item.relTime)}}" value="{{item.accountInfo.nikeName}}" is-link url='../new_onewish/new_onewish?wishid={{item.wishID}}'></i-cell>
+  </i-cell-group>
+</block>

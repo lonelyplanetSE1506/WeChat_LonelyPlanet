@@ -18,7 +18,9 @@
     "pages/mine/mine",
     "pages/new_onewish/new_onewish",
     "pages/new_addComment/new_addComment",
-    "pages/Test/test"
+    "pages/Test/test",
+    "pages/myCommentWish/myCommentWish",
+    "pages/editMyName/editMyName"
   ],
   "window": {
     "backgroundTextStyle": "light",
