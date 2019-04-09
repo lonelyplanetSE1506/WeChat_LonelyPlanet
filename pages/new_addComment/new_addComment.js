@@ -84,6 +84,15 @@ Page({
     var wishid = that.data.wishid
     console.log(wishid)
     var cmcontent = that.data.cmcontent;
+
+    if (cmcontent == "") {
+      $Toast({
+        content: '内容不能为空',
+        type: 'warning'
+      });
+      return
+    }
+
     console.log(cmcontent);
     wx.request({
       url: app.globalData.myUrl+'/weChatAddComment/' + wishid + ':' + cmcontent,

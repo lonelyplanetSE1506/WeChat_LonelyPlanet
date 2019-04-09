@@ -10,3 +10,28 @@
         <i-cell title="{{item.title}}"  label="5小时前"  is-link url='../new_onewish/new_onewish?wishid={{item.wishID}}'></i-cell>
     </i-swipeout>
 </view>
+
+<i-card title="我" full>
+    <view slot="content"><text>消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容</text></view>
+</i-card>
+<view style='height:10px;background-color:#e9eaec'></view>
+<i-card extra="对方" full>
+    <view slot="content"><text>消息内容消息内容消息内容消息内容消息内容消息内容</text></view>
+</i-card>
+<view style='height:10px;background-color:#e9eaec'></view>
+<i-card title="我" full>
+    <view slot="content"><text>消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容</text></view>
+</i-card>
+<view style='height:10px;background-color:#e9eaec'></view>
+<i-card extra="对方" full>
+    <view slot="content"><text>消息内容消息内容消息内容消息内容消息内容消息内容</text></view>
+</i-card>
+<view style='height:10px;background-color:#e9eaec'></view>
+<i-card title="我" full>
+    <view slot="content"><text>消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容</text></view>
+</i-card>
+<view style='height:10px;background-color:#e9eaec'></view>
+<i-card extra="对方" full>
+    <view slot="content"><text>消息内容消息内容消息内容消息内容消息内容消息内容</text></view>
+</i-card>
+<view style='height:10px;background-color:#e9eaec'></view>
