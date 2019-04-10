@@ -1,3 +1,4 @@
+
 //app.js
 App({
   onLaunch: function () {
@@ -6,12 +7,23 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+      var that = this
+      // 登录
+      wx.login({
+        success: res => {
+          this.globalData.code=res.code
+          wx.request({
+            url: "https://api.weixin.qq.com/sns/jscode2session?appid=" + this.globalData.appid + "&secret=" + this.globalData.secret + "&js_code=" + res.code + "&grant_type=authorization_code",
+            data: {},
+            method: "GET",
+            success: function (res) {
+              console.log(res.data.openid)
+              that.globalData.openid = res.data.openid
+            }
+          })
+        }
+      })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -36,6 +48,10 @@ App({
   globalData: {
     userInfo: null,
     //实机调试时可改为局域网地址
-    myUrl: "http://localhost:8080"
+    myUrl: "http://115.156.128.185:8080",
+    code:null,
+    appid: "wxd33cf730dd51c008",
+    secret: "d92cdb9483a87a4fcbf485840308e53a",
+    openid:null
   }
 })
