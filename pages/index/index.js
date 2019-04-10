@@ -7,8 +7,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    openid:null
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
   bindViewTap: function() {
@@ -18,28 +17,33 @@ Page({
   },
   
   testBtn: function() {
-    this.setData({
-      openid: app.globalData.openid
-    })
-    wx.request({//发送登录请求
-      url: app.globalData.myUrl + '/newWeChatLogin',
+    wx.request({//获取账号请求
+      url: app.globalData.myUrl + '/getWeChatAccountInfo',
       method: "POST",
       data: app.globalData.openid,
       header: { "Content-Type": "application/json" },
       success: function (res) {
-        console.log(res)
-        if(res.data=="old")
-        {
-          wx.switchTab({
-            url: '../new_shudong/new_shudong',//老用户跳转到树洞页面
-          })
-        }
-        if(res.data=="new")
-        {
-          wx.navigateTo({
-            url: '../editMyName/editMyName',//新用户添加昵称
-          })
-        }
+        console.log(res.data.userInfo)
+        wx.setStorage({
+          key: 'my_openID',
+          data: res.data.userInfo.openID
+        })
+        wx.setStorage({
+          key: 'my_selfIntro',
+          data: res.data.userInfo.selfIntro
+        })
+        wx.setStorage({
+          key: 'my_nikeName',
+          data: res.data.userInfo.nikeName
+        })
+        wx.setStorage({
+          key: 'my_accountID',
+          data: res.data.userInfo.accountID
+        })
+        wx.switchTab({
+          url: '../new_shudong/new_shudong',//老用户跳转到树洞页面
+        })
+        
       }
     })
   },
@@ -90,9 +94,6 @@ Page({
   },
 
   onShow: function () {
-    this.setData({
-      openid: app.globalData.openid
-    })
   },
   weChatLogin: function () {
     var frmData = e.detail.value;

@@ -7,17 +7,15 @@ Page({
     nikename: ""
   },
 
-  onLoad: function () {
+  onShow: function () {
     var that = this
 
-    wx.request({
-      url: app.globalData.myUrl + '/AUser',
-      data: {},
-      method: 'GET',
-      success: function (r) {
-      
+    wx.getStorage({
+      key: 'my_nikeName',
+      success(res) {
+        console.log(res.data)
         that.setData({
-          nikename: r.data.userList[0].nikeName
+          nikename: res.data
         });
       }
     })

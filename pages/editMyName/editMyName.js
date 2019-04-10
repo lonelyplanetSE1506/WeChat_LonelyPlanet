@@ -39,21 +39,34 @@ Page({
   addName: function (e) {
     var that = this;
     var name = that.data.accountName;
-    console.log(name);
-    wx.request({
-      url: app.globalData.myUrl + '/weChataddName/'+ name,
-      data: {},
-      method: "GET",
-      success: function (res) {
-        $Toast({
-          content: '修改成功',
-          type: 'success'
-        });
-        wx.navigateBack({
-          delta: 1//想要返回的层级
+    var opid = "";
+    wx.getStorage({
+      key: 'my_acount_info',
+      success(res) {
+        opid = res.data.openID
+        console.log(opid)
+        wx.request({
+          url: app.globalData.myUrl + '/weChatEditName/',
+          data: { openid: opid, name: name },
+          method: "POST",
+          success: function (res) {
+            wx.setStorage({
+              key: 'my_nikeName',
+              data: name
+            })
+            $Toast({
+              content: '修改成功',
+              type: 'success'
+            });
+            wx.navigateBack({
+              delta: 1//想要返回的层级
+            })
+          }
         })
       }
     })
+
+    
   },
 
   backClick() {
