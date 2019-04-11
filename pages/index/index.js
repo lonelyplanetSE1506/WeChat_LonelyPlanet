@@ -17,6 +17,9 @@ Page({
   },
   
   testBtn: function() {
+    if (app.globalData.openid==null)
+      return
+
     wx.request({//获取账号请求
       url: app.globalData.myUrl + '/getWeChatAccountInfo',
       method: "POST",
@@ -40,9 +43,19 @@ Page({
           key: 'my_accountID',
           data: res.data.userInfo.accountID
         })
-        wx.switchTab({
-          url: '../new_shudong/new_shudong',//老用户跳转到树洞页面
-        })
+        if (res.data.userInfo.nikeName=="Default")
+        {
+          wx.navigateTo({
+            url: '/pages/editMyName/editMyName',
+          })
+        }
+        else
+        {
+          wx.switchTab({
+            url: '../new_shudong/new_shudong',//老用户跳转到树洞页面
+          })
+        }
+        
         
       }
     })

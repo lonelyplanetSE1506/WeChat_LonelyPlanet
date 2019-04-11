@@ -41,9 +41,9 @@ Page({
     var name = that.data.accountName;
     var opid = "";
     wx.getStorage({
-      key: 'my_acount_info',
+      key: 'my_openID',
       success(res) {
-        opid = res.data.openID
+        opid = res.data
         console.log(opid)
         wx.request({
           url: app.globalData.myUrl + '/weChatEditName/',

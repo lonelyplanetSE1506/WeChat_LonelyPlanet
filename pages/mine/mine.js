@@ -10,15 +10,9 @@ Page({
   onShow: function () {
     var that = this
 
-    wx.getStorage({
-      key: 'my_nikeName',
-      success(res) {
-        console.log(res.data)
-        that.setData({
-          nikename: res.data
-        });
-      }
-    })
+    that.setData({
+      nikename: wx.getStorageSync('my_nikeName')
+    });
     console.log(that.data.nikename)
   }
 });
