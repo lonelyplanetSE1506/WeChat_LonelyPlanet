@@ -51,7 +51,7 @@ Page({
           method: "POST",
           success: function (res) {
             wx.setStorage({
-              key: 'my_nikeName',
+              key: 'my_wxNikeName',
               data: name
             })
             $Toast({

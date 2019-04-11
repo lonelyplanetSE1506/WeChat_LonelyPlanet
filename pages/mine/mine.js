@@ -11,7 +11,7 @@ Page({
     var that = this
 
     that.setData({
-      nikename: wx.getStorageSync('my_nikeName')
+      nikename: wx.getStorageSync('my_wxNikeName')
     });
     console.log(that.data.nikename)
   }

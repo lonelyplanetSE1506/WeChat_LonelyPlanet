@@ -36,14 +36,19 @@ Page({
           data: res.data.userInfo.selfIntro
         })
         wx.setStorage({
-          key: 'my_nikeName',
-          data: res.data.userInfo.nikeName
+          key: 'my_wxNikeName',
+          data: res.data.userInfo.wxNikeName
         })
         wx.setStorage({
           key: 'my_accountID',
           data: res.data.userInfo.accountID
         })
-        if (res.data.userInfo.nikeName=="Default")
+        wx.setStorage({
+          key: 'my_account',
+          data: res.data.userInfo
+        })
+
+        if (res.data.userInfo.wxNikeName=="Default")
         {
           wx.navigateTo({
             url: '/pages/editMyName/editMyName',
@@ -55,8 +60,7 @@ Page({
             url: '../new_shudong/new_shudong',//老用户跳转到树洞页面
           })
         }
-        
-        
+      
       }
     })
   },
