@@ -26,7 +26,7 @@ Page({
       data: app.globalData.openid,
       header: { "Content-Type": "application/json" },
       success: function (res) {
-        console.log(res.data.userInfo)
+        console.log(res.data)
         wx.setStorage({
           key: 'my_openID',
           data: res.data.userInfo.openID

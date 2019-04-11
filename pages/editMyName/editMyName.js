@@ -58,8 +58,8 @@ Page({
               content: '修改成功',
               type: 'success'
             });
-            wx.navigateBack({
-              delta: 1//想要返回的层级
+            wx.switchTab({
+              url: '../mine/mine',
             })
           }
         })
