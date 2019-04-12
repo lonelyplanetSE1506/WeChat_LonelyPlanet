@@ -81,8 +81,8 @@ Page({
   //添加评论
   addcomment: function (e) {
     var that = this;
+    var opid = wx.getStorageSync('my_openID')
     var wishid = that.data.wishid
-    console.log(wishid)
     var cmcontent = that.data.cmcontent;
 
     if (cmcontent == "") {
@@ -95,9 +95,9 @@ Page({
 
     console.log(cmcontent);
     wx.request({
-      url: app.globalData.myUrl+'/weChatAddComment/' + wishid + ':' + cmcontent,
-      data: {},
-      method: "GET",
+      url: app.globalData.myUrl+'/weChatAddComment/',
+      data: {openid:opid,wishid:wishid, cmcontent:cmcontent},
+      method: "POST",
       success: function (res) {
         $Toast({
           content: '评论成功',
