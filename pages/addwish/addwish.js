@@ -4,10 +4,11 @@ const app = getApp()
 const { $Toast } = require('../../dist/base/index');
 Page({
   data: {
-    wish: {title:"", permision:"true", content:""}
+    wish: {title:"", permision:"false", content:""}
   },
 
   testSubmit(e) {
+    var that = this
     var wish = this.data.wish
     console.log('wish', wish)
 
@@ -29,6 +30,12 @@ Page({
       data: {openid: opid, wish: JSON.stringify(wish)},//{"email":"Kobe","password":"12345678"}
       header: { "Content-Type": "application/json" },
       success: function (res) {
+        that.setData({
+          "wish.title": "",
+          "wish.content":"",
+          "wish.permision":"true"
+
+        })
         $Toast({
           content: '发布成功',
           type: 'success'
