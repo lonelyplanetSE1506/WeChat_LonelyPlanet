@@ -11,6 +11,8 @@ Page({
     var wish = this.data.wish
     console.log('wish', wish)
 
+    var opid = wx.getStorageSync('my_openID')
+
     if(wish.title=="" || wish.content=="")
     {
       $Toast({
@@ -24,7 +26,7 @@ Page({
     wx.request({//发送添加心愿请求
       url: app.globalData.myUrl + '/weChatAddWish',
       method: "POST",
-      data: JSON.stringify(wish),//{"email":"Kobe","password":"12345678"}
+      data: {openid: opid, wish: JSON.stringify(wish)},//{"email":"Kobe","password":"12345678"}
       header: { "Content-Type": "application/json" },
       success: function (res) {
         $Toast({
