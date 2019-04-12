@@ -4,7 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    current: 'tab1',
     wish: [],
     commentList: [],
     wishid: 0,
@@ -15,13 +14,14 @@ Page({
   handleLike() {
     
     var that = this
-
+    var opid = wx.getStorageSync('my_openID')
+    var wishid = that.data.wishid
+    
     wx.request({
-      url: app.globalData.myUrl + '/isCollection/' + this.data.wishid,
-      data: {},
-      method: 'GET',
+      url: app.globalData.myUrl + '/isCollection/',
+      data: { openid: opid, wishid: wishid},
+      method: 'POST',
       success: function (r) {
-        console.log(r.data)
         if (r.data == true) {
           that.setData({
             isLiked: true,
@@ -60,32 +60,6 @@ Page({
       wishid: options.wishid
     })
 
-    wx.request({
-      url: app.globalData.myUrl + '/checkCollection/' + this.data.wishid,
-      data: {},
-      method: 'GET',
-      success: function (r) {
-        console.log(r.data)
-        if (r.data == true) {
-          that.setData({
-            isLiked: true,
-            likeStr: "已收藏"
-          });
-        }
-        else {
-          that.setData({
-            isLiked: false,
-            likeStr: "收藏"
-          });
-        }
-      }
-    })
-  },
-
-  handleChange({ detail }) {
-    this.setData({
-      current: detail.key
-    });
   },
 
   /**
@@ -126,40 +100,31 @@ Page({
         });
       }
     })
-  },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    //收藏
+    var opid = wx.getStorageSync('my_openID')
+    var wishid = that.data.wishid
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    wx.request({
+      url: app.globalData.myUrl + '/checkCollection',
+      data: { openid: opid, wishid: wishid },
+      method: 'POST',
+      success: function (r) {
+        console.log(r.data)
+        if (r.data == true) {
+          that.setData({
+            isLiked: true,
+            likeStr: "已收藏"
+          });
+        }
+        else {
+          that.setData({
+            isLiked: false,
+            likeStr: "收藏"
+          });
+        }
+      }
+    })
+    console.log("onSHow")
   }
 });
