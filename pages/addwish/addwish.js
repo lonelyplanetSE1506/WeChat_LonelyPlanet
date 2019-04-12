@@ -4,7 +4,8 @@ const app = getApp()
 const { $Toast } = require('../../dist/base/index');
 Page({
   data: {
-    wish: {title:"", permision:"false", content:""}
+    wish: {title:"", permision:"true", content:""},
+    visiable: true
   },
 
   testSubmit(e) {
@@ -33,8 +34,8 @@ Page({
         that.setData({
           "wish.title": "",
           "wish.content":"",
-          "wish.permision":"true"
-
+          "wish.permision":"true",
+          visiable:true
         })
         $Toast({
           content: '发布成功',
@@ -60,11 +61,17 @@ Page({
     })
   },
   onChange(e) {
-    this.setData({
-      "wish.permision": e.detail.value
-    })
-    console.log(e)
-    console.log('switch发生change事件，携带value值为：', e.detail.value)
+    if (e.detail.value)
+      this.setData({
+        "wish.permision": "true",
+        visiable:true
+      })
+    else
+      this.setData({
+        "wish.permision": "false",
+        visiable:false
+      })
+    console.log('switch发生change事件，携带value值为：', this.data.wish)
 
   }
 })

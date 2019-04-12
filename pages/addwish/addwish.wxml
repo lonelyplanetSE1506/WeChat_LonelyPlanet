@@ -12,7 +12,7 @@
 
 <i-cell-group>
     <i-cell title="所有人可见">
-        <i-switch value="{{ wish.permision }}" size="large" bind:change="onChange" slot="footer">
+        <i-switch value="{{ visiable }}" size="large" bind:change="onChange" slot="footer">
             <view slot="open">开启</view>
             <view slot="close">关闭</view>
         </i-switch>
