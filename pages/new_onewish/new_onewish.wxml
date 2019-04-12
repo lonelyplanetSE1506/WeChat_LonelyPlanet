@@ -1,7 +1,7 @@
 <!--pages/tree/tree.wxml-->
 <wxs module="showTime" src="../../utils/showTime.wxs"></wxs>
 
-<i-card title="{{wish.title}}" extra="{{wish.accountInfo.nikeName}}" full="true">
+<i-card title="{{wish.title}}" extra="{{wish.accountInfo.wxNikeName}}" full="true">
     <view slot="content"><text>{{wish.content}}</text></view>
     <view slot="footer">
       <i-row>
@@ -15,7 +15,7 @@
 <text>评论：</text>
 <scroll-view style='padding-top:40px' scroll-y style="height: 450px;">
   <view wx:for="{{commentList}}">
-    <i-card title="{{item.accountInfo.nikeName}}:" extra="" full="true">
+    <i-card title="{{item.accountInfo.wxNikeName}}:" extra="" full="true">
       <view slot="content">{{item.cmcontent}}</view>
       <view slot="footer">{{showTime.timetoStr(item.cmtime)}}</view>
   </i-card>
