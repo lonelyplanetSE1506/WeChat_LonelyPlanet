@@ -9,7 +9,7 @@
   <scroll-view style='padding-top:40px'>
   <view wx:for="{{list}}">
   <view style='height:10px;background-color:#e9eaec'></view>
-    <i-card title="{{item.wish.title}}" extra="{{item.wish.accountInfo.nikeName}}" full="true">
+    <i-card title="{{item.wish.title}}" extra="{{item.wish.accountInfo.wxNikeName}}" full="true">
         <view slot="content" data-wishID='{{item.wish.wishID}}' bindtap='tapOneWish' url="/pages/new_onewish/new_onewish?wishid={{item.wish.wishID}}"><text>{{item.wish.content}}</text></view>
         <view slot="footer">
           <i-row>
