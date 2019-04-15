@@ -22,3 +22,20 @@
   </view> 
   </scroll-view>
 </block>
+<block wx:if="{{showTab2}}">
+  <scroll-view style='padding-top:40px'>
+  <view wx:for="{{hot_list}}">
+  <view style='height:10px;background-color:#e9eaec'></view>
+    <i-card title="{{item.title}}" extra="{{item.accountInfo.wxNikeName}}" full="true">
+        <view slot="content" data-wishID='{{item.wishID}}' bindtap='tapOneWish' url="/pages/new_onewish/new_onewish?wishid={{item.wishID}}"><text>{{item.content}}</text></view>
+        <view slot="footer">
+          <i-row>
+            <i-col span="16" i-class="col-class">{{showTime.timetoStr(item.relTime)}}</i-col>
+            <i-col span="4" i-class="col-class"><i-icon type="collection" style='color:#009ad6;' size='20' /><text style='color:#009ad6;' bindtap='collection' data-index='{{index}}' data-list='{{list}}' data-wishID='{{item.wishID}}'>收藏 {{item.collectionNum}}</text></i-col>
+            <i-col span="4" i-class="col-class"><i-icon type="interactive" style='color:#009ad6;' size='20' /><text style='color:#009ad6;'>评论 {{item.commentNum}}</text></i-col>
+          </i-row>
+        </view>
+    </i-card>
+  </view> 
+  </scroll-view>
+</block>
