@@ -10,9 +10,10 @@ Page({
     showTab1: true,
     showTab2: false
   },
-  /*
+  
   collection: function (e) {
     console.log(e)
+    /*
     var that = this;
     var wishid = e.currentTarget.dataset.wishid;
     var index = e.currentTarget.dataset.index;
@@ -21,8 +22,9 @@ Page({
     console.log(gg);
     e.currentTarget.dataset.list[index].hasCollection = !gg;
     gg = e.currentTarget.dataset.list[index].hasCollection;//修改index的isGood的值
-    console.log(gg);
+    console.log(gg);*/
     //console.log(that.data)
+    /*
     wx.request({
       url: app.globalData.myUrl + '/isCollection/' + wishid,
       data: {},
@@ -55,8 +57,8 @@ Page({
           });
         }
       }
-    })
-  },*/
+    })*/
+  },
 
   handleChange({ detail }) {
     this.setData({
@@ -74,6 +76,10 @@ Page({
         showTab2: true
       });
     }
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 0
+    })
   },
 
   /**
