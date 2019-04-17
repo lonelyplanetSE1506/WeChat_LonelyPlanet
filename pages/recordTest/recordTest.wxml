@@ -1,0 +1,4 @@
+<!--pages/recordTest/recordTest.wxml-->
+<text>pages/recordTest/recordTest.wxml</text>
+<i-button bind:click="clickRecordBtn">{{btnStr[recordStatus]}}录音</i-button>
+<i-button bind:click="stop">停止录音</i-button>

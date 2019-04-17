@@ -20,7 +20,8 @@
     "pages/new_addComment/new_addComment",
     "pages/Test/test",
     "pages/myCommentWish/myCommentWish",
-    "pages/editMyName/editMyName"
+    "pages/editMyName/editMyName",
+    "pages/recordTest/recordTest"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -55,7 +56,7 @@
       {
         "selectedIconPath": "images/树洞1.png",
         "iconPath": "images/树洞2.png",
-        "pagePath": "pages/Test/test",
+        "pagePath": "pages/recordTest/recordTest",
         "text": "消息"
       },
       {
