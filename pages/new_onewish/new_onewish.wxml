@@ -2,12 +2,10 @@
 <wxs module="showTime" src="../../utils/showTime.wxs"></wxs>
 
 <i-card title="{{wish.title}}" extra="{{wish.accountInfo.wxNikeName}}" full="true">
-    <view slot="content"><text>{{wish.content}}</text></view>
+    <view slot="content" style="min-height:50px"><text>{{wish.content}}</text></view>
     <view slot="footer">
       <i-row>
         <i-col span="16" i-class="col-class">{{showTime.timetoStr(wish.relTime)}}</i-col>
-        <i-col span="4" i-class="col-class"><i-icon type="collection" style='color:#009ad6;' size='20' /><text style='color:#009ad6;'>收藏 {{wish.collectionNum}}</text></i-col>
-        <i-col span="4" i-class="col-class"><i-icon type="interactive" style='color:#009ad6;' size='20' /><text style='color:#009ad6;'>评论 {{wish.commentNum}}</text></i-col>
       </i-row>
     </view>
 </i-card>
@@ -23,9 +21,8 @@
 </scroll-view>
 <view style="position:fixed; bottom:0;width:100%">
   <i-row>
-      <i-col span="8" i-class="col-class"><i-button bind:click="handleLike" shape="circle" size="small" type='info'><text>{{likeStr}}</text></i-button></i-col>
-      <i-col span="8" i-class="col-class"><i-button bind:click="handleComment" shape="circle" size="small" type="info">评论</i-button></i-col>
-      <i-col span="8" i-class="col-class"><i-button bind:click="handleChat" shape="circle" size="small" type="info">私聊</i-button></i-col>
+      <i-col span="8" offset="3" i-class="col-class"><i-button bind:click="handleLike" shape="circle" size="small" type='info'><text>{{likeStr}}</text></i-button></i-col>
+      <i-col span="8" offset="2" i-class="col-class"><i-button bind:click="handleComment" shape="circle" size="small" type="info">评论</i-button></i-col>
   </i-row>
 </view>
 <i-message id="message" />

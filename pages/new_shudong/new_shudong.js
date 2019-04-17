@@ -13,51 +13,39 @@ Page({
   
   collection: function (e) {
     console.log(e)
-    /*
-    var that = this;
-    var wishid = e.currentTarget.dataset.wishid;
-    var index = e.currentTarget.dataset.index;
-    var gg = e.currentTarget.dataset.list[index].hasCollection;
-    var num = e.currentTarget.dataset.list[index].wish.collectionNum;
-    console.log(gg);
-    e.currentTarget.dataset.list[index].hasCollection = !gg;
-    gg = e.currentTarget.dataset.list[index].hasCollection;//修改index的isGood的值
-    console.log(gg);*/
-    //console.log(that.data)
-    /*
+    var that = this
+    var opid = wx.getStorageSync('my_openID')
+    var wishid = e.currentTarget.dataset.wishid
     wx.request({
-      url: app.globalData.myUrl + '/isCollection/' + wishid,
-      data: {},
-      method: 'GET',
+      url: app.globalData.myUrl + '/isCollection/',
+      data: { openid: opid, wishid: wishid },
+      method: 'POST',
       success: function (r) {
         console.log(r.data)
-        //console.log(that.list)
         if (r.data == true) {
-          num = num + 1;
-          e.currentTarget.dataset.list[index].wish.collectionNum = num;
           that.setData({
-            list: e.currentTarget.dataset.list
+            isLiked: true,
+            likeStr: "已收藏"
           });
-          wx.showToast({
-            title: "收藏成功",
-            icon: '',
-            duration: 2000
+          $Message({
+            content: '收藏成功！',
+            type: 'info'
           });
         }
         else {
-          num = num - 1;
-          e.currentTarget.dataset.list[index].wish.collectionNum = num;
           that.setData({
-            list: e.currentTarget.dataset.list
+            isLiked: false,
+            likeStr: "收藏"
           });
-          wx.showToast({
-            title: "已经取消收藏！",
-            icon: '',
-            duration: 2000
+          $Message({
+            content: '取消收藏',
+            type: 'info'
           });
         }
       }
-    })*/
+    })
+    that.onShow()
+    that.onShow()
   },
 
   handleChange({ detail }) {
@@ -87,10 +75,11 @@ Page({
  */
   onShow: function () {
     var that = this;
+    var id = wx.getStorageSync('my_accountID')
     wx.request({
       url: app.globalData.myUrl+'/PublicWish/', //请求的URL地址
-      method: "GET", //请求方式
-      data: {}, //是否有数据传到服务器
+      method: "POST", //请求方式
+      data: id, //是否有数据传到服务器
       success: function (res) {
         var listData = res.data;
 
@@ -113,8 +102,8 @@ Page({
     //console.log(list)  
     wx.request({
       url: app.globalData.myUrl + '/Top10Wish/', //请求的URL地址
-      method: "GET", //请求方式
-      data: {}, //是否有数据传到服务器
+      method: "POST", //请求方式
+      data: id, //是否有数据传到服务器
       success: function (res) {
         var listData = res.data;
 
