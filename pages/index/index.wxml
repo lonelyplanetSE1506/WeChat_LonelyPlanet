@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container" style="background-image: url('../../images/background5.jpg')" bindtap="bindViewTap">
+<view class="container" style="background-image: url('../../images/background5.jpg')">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>

@@ -44,12 +44,6 @@
       {
         "selectedIconPath": "images/首页1.png",
         "iconPath": "images/首页2.png",
-        "pagePath": "pages/shudong/shudong",
-        "text": "树洞"
-      },
-      {
-        "selectedIconPath": "images/首页1.png",
-        "iconPath": "images/首页2.png",
         "pagePath": "pages/addwish/addwish",
         "text": "发布"
       },

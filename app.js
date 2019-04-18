@@ -48,7 +48,7 @@ App({
   globalData: {
     userInfo: null,
     //实机调试时可改为局域网地址
-    myUrl: "http://localhost:8080",
+    myUrl: "http://115.156.128.185:8080",
     code:null,
     appid: "wxd33cf730dd51c008",
     secret: "d92cdb9483a87a4fcbf485840308e53a",

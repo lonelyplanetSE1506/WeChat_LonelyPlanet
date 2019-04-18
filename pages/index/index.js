@@ -9,12 +9,6 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../login/login'
-    })
-  },
   
   testBtn: function() {
     if (app.globalData.openid==null)
@@ -102,11 +96,6 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
-    }),
-    setTimeout(function () {
-      wx.navigateTo({
-        url: '../login/login',
-      })
     })
   },
 
