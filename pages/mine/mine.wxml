@@ -12,10 +12,11 @@
     <i-cell title="我发布的心愿" is-link url="/pages/tree/tree"></i-cell>
   </i-cell-group>
 </i-panel>
-
+<!-->
 <i-panel class="cell-panel-demo">
   <i-cell-group>
     <i-cell title="意见反馈" is-link url=""></i-cell>
     <i-cell title="退出" is-link url=""></i-cell>
   </i-cell-group>
 </i-panel>
+-->

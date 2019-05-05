@@ -1,7 +1,7 @@
 <!--pages/index/to_news/to_news.wxml-->
 <view class='top-content'>
   <image src='images/back.png' class='back-icon' bindtap='back'></image>
-  <view class="weui-cells__title" style=' display: flex;flex-direction: row;justify-content: center;margin-left:210rpx'>匿名聊天X</view>
+  <view class="weui-cells__title" style=' display: flex;flex-direction: row;justify-content: center;margin-left:210rpx'>匿名聊天</view>
 </view>
 <view class='news'>
 
