@@ -1,6 +1,5 @@
 <i-panel class="cell-panel-demo">
   <i-cell-group>
-    <i-cell title="我的资料" value="95后，男"></i-cell>
     <i-cell title="我的昵称" is-link url="/pages/editMyName/editMyName?name={{nikename}}" value="{{nikename}}"></i-cell>
   </i-cell-group>
 </i-panel>

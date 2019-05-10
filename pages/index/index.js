@@ -159,7 +159,7 @@ Page({
         }
         else {
           wx.navigateTo({
-            url: '../login/login',//仍然在登录界面
+            url: '../index/index',//仍然在初始界面
           })
           //console.log(result)
         }

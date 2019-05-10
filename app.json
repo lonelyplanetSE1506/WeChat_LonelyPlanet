@@ -1,27 +1,17 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/login/login",
     "pages/logs/logs",
-    "pages/mainPage/mainPage",
-    "pages/wishSea/wishSea",
-    "pages/signup/signup",
     "pages/tree/tree",
     "pages/collocation/collocation",
     "pages/addwish/addwish",
-    "pages/mycl/mycl",
-    "pages/shudong/shudong",
     "pages/shanliao/shanliao",
-    "pages/message/message",
-    "pages/1to1/1to1",
     "pages/new_shudong/new_shudong",
     "pages/mine/mine",
     "pages/new_onewish/new_onewish",
     "pages/new_addComment/new_addComment",
-    "pages/Test/test",
     "pages/myCommentWish/myCommentWish",
     "pages/editMyName/editMyName",
-    "pages/recordTest/recordTest",
     "pages/chat/chat"
   ],
   "window": {
@@ -43,8 +33,8 @@
         "text": "树洞"
       },
       {
-        "selectedIconPath": "images/首页1.png",
-        "iconPath": "images/首页2.png",
+        "selectedIconPath": "images/树洞1.png",
+        "iconPath": "images/树洞2.png",
         "pagePath": "pages/addwish/addwish",
         "text": "发布"
       },
