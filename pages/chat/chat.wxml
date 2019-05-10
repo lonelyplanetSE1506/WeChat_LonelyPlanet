@@ -14,10 +14,9 @@
             <text class='chat-time'>{{item.date}}</text>
           </view>
           <view class='other-record'>
-            <image class='other-head-img' src='images/headimg.png'></image>
+            <view class='other-record-content'>{{item.message}}</view>
             <view class='other-record-content-triangle'></view>
-            <view class='other-record-content'>
-            {{item.message}}</view>
+            <image class='other-head-img' src='images/headimg.png'></image>
           </view>
         </view>
         <!--此处为结尾  -->
@@ -27,9 +26,9 @@
             <text class='chat-time'>{{item.date}}</text>
           </view>
           <view class='own-record'>
-            <view class='own-record-content'>{{item.message}}</view>
-            <view class='own-record-content-triangle'></view>
             <image class='own-head-img' src='images/headimg.png'></image>
+            <view class='own-record-content-triangle'></view>
+            <view class='own-record-content'>{{item.message}}</view>
           </view>
         </view>
         <!-- own结尾  -->
