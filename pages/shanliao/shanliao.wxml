@@ -1,6 +1,5 @@
 <!--pages/shanliao/shanliao.wxml-->
 <!--闪聊界面-->
 <view class='container'>
-<view class='space'></view>
 <button class="btn" type="primary" plain="true" bindtap='join'>随机进入匿名聊天</button>
 </view>

@@ -5,6 +5,7 @@
   line-height: 1.5.rem;
 }
 
+
 .row{
   display: flex;
   align-items: center;
@@ -31,12 +32,13 @@
   margin: 1rem 1 rem;
 }
 .link{
-  margin-left: 50px;
+  margin-left: 20px;
   color: blue;
   display: inline-table;
 }
 
 
-.space{
-  margin-top: 200px;
+.btn{
+  margin-top: 150px;
 }
+
